@@ -13,7 +13,7 @@ analyses:
 install.packages("remotes")
 remotes::install_github(c("pmcharrison/hrep",
                           "pmcharrison/incon",
-                          "pmcharrison/hvr@0.1.0"))
+                          "pmcharrison/hvr"))
 ```
 
 Other packages can be installed as needed using `install.packages`.
