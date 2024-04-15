@@ -27,7 +27,7 @@ check_row <- function(row) {
 }
 
 get_stimulus_data <- function(file) {
-  read_csv(file, col_types = cols()) %>% 
+  read_csv(file, col_types = cols(), guess_max = Inf) %>% 
     rename(pos = chord_id) %>% 
     select(- dataset_id) %>% 
     mutate(composition_id = as.integer(composition_id) + 1L,
