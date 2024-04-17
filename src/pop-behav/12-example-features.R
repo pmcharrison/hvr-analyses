@@ -117,7 +117,11 @@ stim_id <- 5
 
 list(
   description = corpus[[stim_id]] %>% metadata() %>% `$`(description),
-  features = map(dat[[stim_id]], format_features)
+  
+  # Originally this code was written to visualise continuous features too,
+  # but for some reason these are rendering as NULL, so now we just 
+  # subset by the discrete features below.
+  features = map(dat[[stim_id]]["discrete"], format_features)
 ) %>% 
   saveRDS(file.path(out_dir, "example-features.rds"))
 

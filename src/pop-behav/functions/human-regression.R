@@ -198,7 +198,7 @@ compare_regression_to_humans <- function(
                           "legal, and corpus must be provided individually")
 ) {
   corpus %>% 
-    add_column(information_content = - log2(hvr::event_probs(par, 
+    add_column(information_content = - log2(hvr:::event_probs(par, 
                                                              observation_matrix, 
                                                              continuation_matrices, 
                                                              legal))) %>% 

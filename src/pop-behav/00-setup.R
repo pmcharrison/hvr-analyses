@@ -5,7 +5,7 @@ library(hrep)
 source("src/pop-behav/functions/about.R")
 
 out_dir <- "output/pop-behav"
-ppm_orders <- 0:5
+ppm_orders <- c(0:5, 100)
 ppm_training_sizes <- 439L # maximum = 439
 poly_degrees <- 4L
 

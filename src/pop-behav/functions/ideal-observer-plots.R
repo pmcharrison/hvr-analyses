@@ -43,7 +43,7 @@ get_model_plots <- function(runs, chosen_order, viewpoint_labels) {
       list(
         marginals = hvr::plot_marginals(mod, viewpoint_labels = viewpoint_labels, fill = "#21908CFF") +
           ggplot2::theme(strip.background = ggplot2::element_rect(
-            color = "#DEDEDE", size = 1,
+            color = "#DEDEDE", linewidth = 1,
             fill = "#DEDEDE"
           )),
         perm_int = hvr::plot_perm_int(mod, 

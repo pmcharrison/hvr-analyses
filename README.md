@@ -23,3 +23,9 @@ in ascending numeric sequence. They save their outputs to `output`.
 Each of these files can be run from a blank workspace,
 assuming that the previous files have been run already
 and their results saved to `output`.
+
+The original code for `04-ideal-regression.R` computed permutation-based 
+feature importance metrics that were very time-consuming to evaluate.
+These have been expedited by default by setting `perm_int_reps = 1` in
+`04-ideal-regression.R`. To compute these properly one would have to increase
+that number to e.g. 100.

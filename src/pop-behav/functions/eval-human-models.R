@@ -63,7 +63,7 @@ regress_models <- function(i, j, ideal_model_predictions) {
 
 get_benchmarks <- function(file = "input/pop-behav/pop-behav.csv") {
   message("Getting benchmarks...")
-  x <- read_csv(file, col_types = cols()) %>%
+  x <- read_csv(file, col_types = cols(), guess_max = Inf) %>%
     mutate(composition_id = composition_id + 1L,
            event_id = event_id + 1L) %>% 
     group_by(stimulus_id) %>% 
@@ -187,7 +187,7 @@ get_new_benchmarks <- function(composition_id, event_id, chord_id, midi, full_mi
                       stim[1:chord_id] %>% as.list()))
   
   final_pi_chords <- full_midi[seq(to = chord_id, 
-                                   length = 2)] %>% set_names("x", "y")
+                                   length = 2)] %>% set_names(c("x", "y"))
   
   final_pitch_saliences <- map(final_pi_chords, parn94::pitch_salience)
   
@@ -310,8 +310,8 @@ compare_cors <- function(k, h, ideal_model_predictions) {
   test <- cocor::cocor.dep.groups.overlap(r.jk = r_jk, r.jh = r_jh, r.kh = r_kh,
                                           n = nrow(data), test = "zou2007")
   
-  stopifnot(test@r.jk == ideal_model_predictions$pearson_r[k],
-            test@r.jh == ideal_model_predictions$pearson_r[h])
+  stopifnot(test@r.jk == ideal_model_predictions$pearson[k],
+            test@r.jh == ideal_model_predictions$pearson[h])
   
   test@zou2007$conf.int
 }

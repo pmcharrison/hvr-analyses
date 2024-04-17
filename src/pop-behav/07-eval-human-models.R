@@ -63,7 +63,7 @@ cor_compare %>%
 
 cor_models(ids$full, ids$simple, ideal_model_predictions, method = "pearson")
 
-regress_models(ids$full, ids$simple, ideal_model_predictions) %>% plot
+regress_models(ids$full, ids$simple, ideal_model_predictions) %>%
   {list(
     mod = broom::glance(.),
     pred = broom::tidy(., conf.int = TRUE)

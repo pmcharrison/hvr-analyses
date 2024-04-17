@@ -20,7 +20,7 @@ for (i in seq_len(nrow(runs))) {
                             model_matrix_dir = model_matrix_dir,
                             output_dir = ideal_regression_dir,
                             max_iter = 500,
-                            perm_int_reps = 100, 
+                            perm_int_reps = 1, 
                             allow_negative_weights = FALSE)
   gc()
 } 

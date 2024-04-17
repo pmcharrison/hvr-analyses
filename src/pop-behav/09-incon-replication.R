@@ -1,3 +1,8 @@
+stop(
+  "This script ('09-incon-replication') is not currently working, there may be some prerequisites ",
+  "missing. I don't think the other scripts depend on it though."
+)
+
 library(tidyverse)
 theme_set(theme_classic() +
             ggplot2::theme(axis.text = ggplot2::element_text(colour = "black"),
